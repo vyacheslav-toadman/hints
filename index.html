@@ -5,14 +5,85 @@
     <title>html/css hints</title>
 </head>
 <body>
-  <h2>Selectors</h2>
-  <pre>
-    <code>
-        [test~="foo"] : Checks if the value of the attribute test contains the word foo no matter of the position.
-        [test|="foo"] : Checks if the value of the attribute test starts with the word foo.
-        [test^="foo"] : Checks if the value of the attribute test has the first 3 letters foo.
-        [test$="foo"] : Checks if the value of the attribute test ends with the word foo.
-    </code>
-  </pre>
+  <main>
+    <section>
+        <h2>WebStorm hotkeys</h2>
+        <ul>
+            <li>shift + f10 запуск сервера</li>
+            <li>alt + 1 - открыть / закрыть вкладку Project</li>
+            <li>alt + 0 - открыть / закрыть вкладку Commit</li>
+            <li>ctrl + w - выделить слово на котором стоит курсор</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Selectors</h2>
+        <pre>
+            <code>
+                [test~="foo"] : Checks if the value of the attribute test contains the word foo no matter of the position.
+                [test|="foo"] : Checks if the value of the attribute test starts with the word foo.
+                [test^="foo"] : Checks if the value of the attribute test has the first 3 letters foo.
+                [test$="foo"] : Checks if the value of the attribute test ends with the word foo.
+            </code>
+        </pre>
+    </section>
+    
+    <hr>
+    
+    <section>
+        <h2>Практическое применение математических функций в CSS: calc, clamp, min, max</h2>
+        <p>На сегодняшний день существует <a href="https://caniuse.com/css-math-functions">четыре замечательно работающие в CSS математические функции.</a></p>
+    </section>
+
+    <hr>
+    <section>
+        <h2>Прочие заметки</h2>
+        <p>scrollbar-gutter - замечательное свойство, резервирующее место под скроллбар (чтобы контент не прыгал). Офигенно пригодится в каталогах с разной длиной - при переключении контент не будет делать лево-право, да</p>
+        <p>width, height - задают чёткие размеры.</p>
+        <p>max-width, max-height - ограничивают размеры и позволяют контенту сохранять первозданные вид.</p>
+        <p>Чтобы сделать всю область со ссылкой ссылкой и не менять разметку, добавь псевдоэлемент для этой ссылки и спозиционируй его абсолютно родителя.</p>
+        
+        <hr>
+
+        <p>Преобразование положительных значений CSS переменных происходит при помощи функции calc() и умножения переменной на 0</p>
+        <code>
+            <pre>
+--o: 20px;
+margin: calc(var(--o) * -1);
+padding: var(--o);
+            </pre>
+        </code>
+        <hr>
+        <p>Убрать кнопку очистки поля поиска</p>
+        <code>
+            <pre>
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+    display: none;
+} 
+            </pre>
+        </code>
+        <hr>
+        <p>Несколько transform добавляются через пробел, несколько transition через запятую.</p>
+        <hr>
+        <p>Устанавливать пакеты рекомендуется с ключом --save-exact (сокращённо -E)- это нужно для того, чтобы в файле package.json была указана конкретная версия пакета во избежание коллизий, наличия разных версий пакета у разработчиков. Если не использовать этот ключ, то версия пакета будет помечена символом ^ - это означает "эта версия или любая возможная выше".</p>
+        <div>
+            Класс для обрезания строки
+            <code>
+                <pre>
+.overflow-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+                </pre>
+            </code>
+        </div>
+    </section>
+</main>
 </body>
 </html>
