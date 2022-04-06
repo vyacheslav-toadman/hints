@@ -6,6 +6,35 @@
 </head>
 <body>
   <main>
+      <section>
+          <h2>Анимации</h2>
+          <pre>
+              <code>
+// Gradual fade in
+
+.fade-in-gradual {
+    animation: 225ms ease 0s fadeInGradual both;
+}
+
+@keyframes fadeInGradual {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@for $i from 1 through 75 {
+    .fade-in-gradual:nth-child(#{$i}) {
+        animation-delay: $i *  math.div(1s, 38);
+    }
+}
+              </code>
+          </pre>
+      </section>
     <section>
         <h2>WebStorm hotkeys</h2>
         <ul>
